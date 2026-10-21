@@ -1,0 +1,137 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--color-black);
+  background-color: rgba(252, 252, 252, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(100% - 40px, var(--container));
+  min-height: var(--header-height);
+  margin-inline: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navLink {
+  position: relative;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  transition: color 0.16s ease, background-color 0.16s ease;
+}
+
+.navLink:hover {
+  color: var(--color-black);
+  background-color: var(--color-blue-soft);
+}
+
+.navLink[aria-current='page'] {
+  color: var(--color-black);
+  background-color: var(--color-yellow-soft);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 2px solid var(--color-black);
+  border-radius: 12px;
+  background-color: var(--color-white);
+  box-shadow: 2px 2px 0 var(--color-black);
+  color: var(--color-black);
+}
+
+.menuButton svg {
+  width: 22px;
+  height: 22px;
+}
+
+.mobilePanel {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav,
+  .actions .desktopCta {
+    display: none;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+
+  .mobilePanel {
+    display: block;
+    position: fixed;
+    inset: calc(var(--header-height) + 2px) 0 0;
+    z-index: 99;
+    padding: 28px 20px 40px;
+    background-color: var(--color-bg);
+    border-top: 2px solid var(--color-black);
+    overflow-y: auto;
+    animation: slideIn 0.2s ease;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: min(100%, 480px);
+    margin-inline: auto;
+  }
+
+  .mobileLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border: 2px solid var(--color-black);
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 2px 2px 0 var(--color-black);
+  }
+
+  .mobileLink span:last-child {
+    color: var(--color-blue);
+  }
+
+  .mobileCta {
+    margin-top: 18px;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
