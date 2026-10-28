@@ -1,0 +1,114 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(100%, 820px);
+  margin-inline: auto;
+}
+
+.item {
+  border: 2px solid var(--color-black);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: 3px 3px 0 var(--color-black);
+  overflow: hidden;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.item[open] {
+  background-color: var(--color-white);
+  box-shadow: 4px 4px 0 var(--color-blue);
+}
+
+.item:hover {
+  transform: translateY(-1px);
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary:focus-visible {
+  outline-offset: -3px;
+  border-radius: var(--radius-md);
+}
+
+.icon {
+  position: relative;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--color-black);
+  border-radius: 50%;
+  background-color: var(--color-yellow);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.icon::before,
+.icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 2px;
+  margin: -1px 0 0 -6px;
+  border-radius: 2px;
+  background-color: var(--color-black);
+}
+
+.icon::after {
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
+}
+
+.item[open] .icon {
+  background-color: var(--color-blue);
+}
+
+.item[open] .icon::before,
+.item[open] .icon::after {
+  background-color: var(--color-white);
+}
+
+.item[open] .icon::after {
+  transform: rotate(0deg);
+}
+
+.answer {
+  padding: 0 22px 22px;
+  border-top: 1px dashed var(--color-border-strong);
+  padding-top: 16px;
+  margin-top: -1px;
+  color: var(--color-muted);
+  font-size: 0.98rem;
+}
+
+.answer p {
+  max-width: 66ch;
+}
+
+@media (max-width: 560px) {
+  .summary {
+    padding: 16px 16px;
+    font-size: 0.98rem;
+  }
+
+  .answer {
+    padding: 14px 16px 18px;
+  }
+}
