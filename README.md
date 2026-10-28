@@ -48,3 +48,25 @@ O resultado final foi bastante satisfatório. A página elaborada tem os element
 2. O que fariam diferente se tivessem mais tempo?
 A alteração de Real para Pokédolar, e possivelmente mais funcionalidades tanto para a versão paga, quanto para a gartuita.
 E possivelmente trabalhar com mais modelos para um refinar o que o outro fez.
+
+## Parte 2:
+
+### 1. O que foi melhorado?
+Realizamos melhorias na acessibilidade da landing page do NoseGPS, incluindo ajustes nos textos alternativos das imagens, atributos ARIA e estrutura HTML, com a adição das tags `<main>` e `<h1>`.
+
+### 2. Qual MCP foi utilizado?
+Utilizamos o **MCP Accessibility Scanner**.
+
+GitHub: https://github.com/JustasMonkev/mcp-accessibility-scanner
+
+### 3. Por que escolhemos esse MCP?
+Escolhemos esse MCP para identificar problemas de acessibilidade e auxiliar nas correções do projeto.
+
+### 4. Como ele contribuiu?
+Na primeira análise, o relatório apresentou **97/100**, identificando dois problemas relacionados à estrutura HTML.
+
+Após as correções, uma nova análise apresentou **100/100**, sem problemas detectados pela ferramenta.
+
+### 5. Conclusão
+O MCP ajudou a identificar problemas, orientar melhorias e validar as correções, contribuindo para tornar o NoseGPS mais acessível.
+
